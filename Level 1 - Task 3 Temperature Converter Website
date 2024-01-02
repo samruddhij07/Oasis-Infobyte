@@ -1,0 +1,124 @@
+Temperature Converter Website :-
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #converter {
+            background-color: #3498db;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input, select, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+    <title>Temperature Converter</title>
+</head>
+<body>
+
+<div id="converter">
+    <input type="text" id="temperature" placeholder="Enter Temperature" oninput="validateInput()">
+    <select id="unit">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+    </select>
+    <button onclick="convertTemperature()">Convert</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function validateInput() {
+        const inputField = document.getElementById('temperature');
+        const inputValue = inputField.value;
+
+        if (isNaN(inputValue) || inputValue.trim() === '') {
+            inputField.setCustomValidity('Please enter a valid number.');
+        } else {
+            inputField.setCustomValidity('');
+        }
+    }
+
+    function convertTemperature() {
+        const temperatureInput = parseFloat(document.getElementById('temperature').value);
+        const unit = document.getElementById('unit').value;
+        let result;
+
+        if (isNaN(temperatureInput)) {
+            document.getElementById('result').innerHTML = 'Please enter a valid number.';
+            return;
+        }
+
+        switch (unit) {
+            case 'celsius':
+                result = {
+                    fahrenheit: (temperatureInput * 9 / 5) + 32,
+                    kelvin: temperatureInput + 273.15
+                };
+                break;
+            case 'fahrenheit':
+                result = {
+                    celsius: (temperatureInput - 32) * 5 / 9,
+                    kelvin: (temperatureInput - 32) * 5 / 9 + 273.15
+                };
+                break;
+            case 'kelvin':
+                result = {
+                    celsius: temperatureInput - 273.15,
+                    fahrenheit: (temperatureInput - 273.15) * 9 / 5 + 32
+                };
+                break;
+            default:
+                break;
+        }
+
+        displayResult(result);
+    }
+
+    function displayResult(result) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = '';
+
+        for (const [key, value] of Object.entries(result)) {
+            const unit = key.charAt(0).toUpperCase() + key.slice(1);
+            resultDiv.innerHTML += `${unit}: ${value.toFixed(2)}&deg;  `;
+        }
+    }
+</script>
+
+</body>
+</html>
