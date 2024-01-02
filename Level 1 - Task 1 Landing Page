@@ -1,0 +1,100 @@
+Landing Page :-
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #000000;
+        }
+
+        section {
+            padding: 40px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .feature {
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .call-to-action {
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 60px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+    <title>My Landing Page</title>
+</head>
+<body>
+    <header>
+        <h1>Your Brand</h1>
+        <h2>Unlocking Creativity in Web Design</h2>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Your Brand, where creativity knows no bounds. We specialize in crafting unique and engaging web experiences that leave a lasting impression.</p>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h2>Unique Design</h2>
+            <p>Our team of designers creates visually stunning and unique designs tailored to your brand's identity.</p>
+        </div>
+        <div class="feature">
+            <h2>Responsive Layouts</h2>
+            <p>Ensure a seamless experience across devices with our responsive and mobile-friendly layouts.</p>
+        </div>
+        <div class="feature">
+            <h2>User Experience</h2>
+            <p>We prioritize user experience, creating websites that are not just beautiful but also intuitive and user-friendly.</p>
+        </div>
+    </section>
+
+    <section class="call-to-action">
+        <h2>Ready to Transform Your Online Presence?</h2>
+        <p>Contact us today for a consultation and let's bring your ideas to life.</p>
+        <button>Contact Us</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Brand. All rights reserved.</p>
+        <p>Follow us on <a href="https://twitter.com/your-twitter" target="_blank">Twitter</a></p>
+    </footer>
+</body>
+</html>
